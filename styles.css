@@ -31,73 +31,47 @@ header {
     border: 2px solid #ccc;
     border-radius: 8px;
     padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.header {
-    font-weight: bold;
-    text-align: center;
+.grid-item.header {
     background-color: #0056a6;
     color: white;
-    padding: 10px 0;
-    border: none;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
 }
 
 .task-list {
-    min-height: 300px;
+    min-height: 150px;
     margin-bottom: 10px;
     border: 1px solid #ddd;
     padding: 5px;
-    border-radius: 4px;
     background-color: #f2f7fc;
-    overflow-y: auto;
-    max-height: 400px;
-}
-
-button.add-task-btn {
-    background-color: #0078d4;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 10px;
-    cursor: pointer;
-    width: 100%;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-button.add-task-btn:hover {
-    background-color: #005bb5;
 }
 
 .task-item {
     background-color: #e7f3e7;
     margin: 10px 0;
     padding: 10px;
-    border-radius: 6px;
-    font-size: 16px;
-    border: 1px solid #ddd;
+    border-radius: 4px;
     cursor: pointer;
 }
 
 .task-item.selected-task {
-    border-color: #0078d4;
+    border: 2px solid #0078d4;
     background-color: #cce4f7;
 }
 
-button.control-btn {
+.control-btn {
     background-color: #0078d4;
     color: white;
     border: none;
     border-radius: 4px;
     padding: 10px;
+    margin-top: 5px;
     cursor: pointer;
-    margin: 5px 0;
-    width: 100%;
-    font-size: 14px;
-    font-weight: bold;
 }
 
-button.control-btn:hover {
+.control-btn:hover {
     background-color: #005bb5;
 }

@@ -1,56 +1,52 @@
-// script.js
-let selectedTask = null;
+let selectedTask = null; // Track the currently selected task
 
 function addTask(dayId) {
-    const taskDescription = prompt("Enter the task:");
-    if (taskDescription) {
-        const dayColumn = document.getElementById(dayId);
-        const taskList = dayColumn.querySelector(".task-list");
+    const taskDescription = prompt("Enter the task description:");
+    if (!taskDescription) return;
 
-        const taskItem = document.createElement("div");
-        taskItem.className = "task-item";
-        taskItem.textContent = taskDescription;
-
-        // Select task on click
-        taskItem.onclick = () => {
-            if (selectedTask) {
-                selectedTask.classList.remove("selected-task");
-            }
-            selectedTask = taskItem;
-            taskItem.classList.add("selected-task");
-        };
-
-        taskList.appendChild(taskItem);
+    const taskTime = prompt("Enter the task time (HH:MM, 24-hour format):");
+    if (!taskTime || !isValidTime(taskTime)) {
+        alert("Invalid time format. Please enter a valid time (HH:MM).");
+        return;
     }
+
+    const dayColumn = document.getElementById(dayId);
+    const taskList = dayColumn.querySelector(".task-list");
+
+    const taskItem = document.createElement("div");
+    taskItem.className = "task-item";
+    taskItem.textContent = `${taskTime} - ${taskDescription}`;
+    taskItem.dataset.time = taskTime; // Store time for sorting
+
+    // Select task on click
+    taskItem.onclick = () => {
+        if (selectedTask) {
+            selectedTask.classList.remove("selected-task");
+        }
+        selectedTask = taskItem;
+        taskItem.classList.add("selected-task");
+    };
+
+    taskList.appendChild(taskItem);
+    sortTasks(taskList); // Sort tasks by time
 }
 
 function removeTask() {
     if (selectedTask) {
         selectedTask.remove();
-        selectedTask = null;
+        selectedTask = null; // Clear the selected task
     } else {
         alert("No task selected!");
     }
 }
 
-function moveTaskUp() {
-    if (selectedTask) {
-        const prevTask = selectedTask.previousElementSibling;
-        if (prevTask) {
-            selectedTask.parentNode.insertBefore(selectedTask, prevTask); // Move the task up
-        } 
-    } else {
-        alert("No task selected!");
-    }
+function sortTasks(taskList) {
+    const tasks = Array.from(taskList.children);
+    tasks.sort((a, b) => a.dataset.time.localeCompare(b.dataset.time));
+    tasks.forEach(task => taskList.appendChild(task)); // Re-append tasks in order
 }
 
-function moveTaskDown() {
-    if (selectedTask) {
-        const nextTask = selectedTask.nextElementSibling;
-        if (nextTask) {
-            selectedTask.parentNode.insertBefore(nextTask, selectedTask); // Move the task down
-        } 
-    } else {
-        alert("No task selected!");
-    }
+function isValidTime(time) {
+    const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // Match HH:MM format
+    return timeRegex.test(time);
 }
