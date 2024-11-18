@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Weekly Task Manager</h1>
+        </header>
+        <div class="grid-container">
+            <!-- Days of the Week -->
+            <div class="grid-item header">Sunday</div>
+            <div class="grid-item header">Monday</div>
+            <div class="grid-item header">Tuesday</div>
+            <div class="grid-item header">Wednesday</div>
+            <div class="grid-item header">Thursday</div>
+            <div class="grid-item header">Friday</div>
+            <div class="grid-item header">Saturday</div>
+
+            <!-- Task Areas -->
+            <div class="grid-item" id="sunday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('sunday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+            <div class="grid-item" id="monday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('monday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+            <div class="grid-item" id="tuesday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('tuesday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+            <div class="grid-item" id="wednesday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('wednesday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+            <div class="grid-item" id="thursday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('thursday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+            <div class="grid-item" id="friday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('friday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+            <div class="grid-item" id="saturday">
+                <div class="task-list"></div>
+                <button class="control-btn" onclick="addTask('saturday')">Add Task</button>
+                <button class="control-btn" onclick="removeTask()">Remove Selected</button>
+                <button class="control-btn" onclick="moveTaskUp()">Move Up</button>
+                <button class="control-btn" onclick="moveTaskDown()">Move Down</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
