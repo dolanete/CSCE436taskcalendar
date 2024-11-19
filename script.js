@@ -41,7 +41,6 @@ function updateWeekDisplay() {
     });
 }
 
-
 // Change to the previous or next week
 function changeWeek(direction) {
     currentWeek.setDate(currentWeek.getDate() + direction * 7); // Move by 7 days
@@ -91,6 +90,15 @@ function addTask(dayId) {
     taskItem.onmouseout = () => {
         const popup = document.getElementById("task-popup");
         popup.style.display = "none";
+    };
+
+    // Add selection functionality
+    taskItem.onclick = () => {
+        if (selectedTask) {
+            selectedTask.classList.remove("selected-task");
+        }
+        selectedTask = taskItem;
+        taskItem.classList.add("selected-task");
     };
 
     taskList.appendChild(taskItem);
@@ -148,27 +156,21 @@ function loadTasks() {
         const dayId = day.id;
         const taskList = day.querySelector(".task-list");
 
-        // Debugging: Log the presence of taskList
-        console.log(`Checking day: ${dayId}, taskList exists: ${!!taskList}`);
-
-        // Handle missing taskList elements
         if (!taskList) {
             console.warn(`Task list is missing for day: ${dayId}`);
             return;
         }
 
-        // Clear existing tasks
-        taskList.innerHTML = "";
+        taskList.innerHTML = ""; // Clear existing tasks
 
-        // Populate tasks for the current day
         if (tasks[dayId]) {
             tasks[dayId].forEach(({ description, time, contents, location }) => {
                 const taskItem = document.createElement("div");
                 taskItem.className = "task-item";
                 taskItem.textContent = `${time} - ${description}`;
                 taskItem.dataset.time = time;
-                taskItem.dataset.contents = contents; // Restore contents
-                taskItem.dataset.location = location; // Restore location
+                taskItem.dataset.contents = contents;
+                taskItem.dataset.location = location;
 
                 // Add hover functionality
                 taskItem.onmouseover = (event) => {
@@ -188,6 +190,15 @@ function loadTasks() {
                 taskItem.onmouseout = () => {
                     const popup = document.getElementById("task-popup");
                     popup.style.display = "none";
+                };
+
+                // Add selection functionality
+                taskItem.onclick = () => {
+                    if (selectedTask) {
+                        selectedTask.classList.remove("selected-task");
+                    }
+                    selectedTask = taskItem;
+                    taskItem.classList.add("selected-task");
                 };
 
                 taskList.appendChild(taskItem);
