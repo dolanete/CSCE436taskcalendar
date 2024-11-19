@@ -1,4 +1,5 @@
 let selectedTask = null; // Track the currently selected task
+let fontSize = 16; // Default font size in pixels
 
 function addTask(dayId) {
     const taskDescription = prompt("Enter the task description:");
@@ -49,4 +50,18 @@ function sortTasks(taskList) {
 function isValidTime(time) {
     const timeRegex = /^([01]\d|2[0-3]):([0-5]\d)$/; // Match HH:MM format
     return timeRegex.test(time);
+}
+
+function zoomIn() {
+    fontSize += 2; // Increase font size
+    document.documentElement.style.fontSize = `${fontSize}px`;
+}
+
+function zoomOut() {
+    if (fontSize > 10) {
+        fontSize -= 2; // Decrease font size
+        document.documentElement.style.fontSize = `${fontSize}px`;
+    } else {
+        alert("Minimum font size reached!");
+    }
 }

@@ -75,3 +75,25 @@ header {
 .control-btn:hover {
     background-color: #005bb5;
 }
+
+/* Accessibility controls */
+.accessibility-controls {
+    margin: 10px 0;
+}
+
+.accessibility-controls .control-btn {
+    margin-right: 10px;
+}
+
+/* Base font size for zooming */
+html {
+    font-size: 16px; /* Default size */
+}
+
+.task-item {
+    font-size: 1rem; /* Relative to the base font size */
+}
+
+header h1 {
+    font-size: 1.5rem; /* Relative to the base font size */
+}
