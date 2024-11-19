@@ -14,50 +14,76 @@
                 <button class="control-btn" onclick="zoomIn()">Zoom In</button>
                 <button class="control-btn" onclick="zoomOut()">Zoom Out</button>
             </div>
+            <div class="week-navigation">
+                <button id="prev-week" onclick="changeWeek(-1)">Previous Week</button>
+                <h2 id="week-display"></h2>
+                <button id="next-week" onclick="changeWeek(1)">Next Week</button>
+            </div>
         </header>
         <div class="grid-container">
             <!-- Days of the Week -->
-            <div class="grid-item header">Sunday</div>
-            <div class="grid-item header">Monday</div>
-            <div class="grid-item header">Tuesday</div>
-            <div class="grid-item header">Wednesday</div>
-            <div class="grid-item header">Thursday</div>
-            <div class="grid-item header">Friday</div>
-            <div class="grid-item header">Saturday</div>
+            <div class="grid-item header">
+                Sunday
+                <div class="date-display" id="sunday-date"></div>
+            </div>
+            <div class="grid-item header">
+                Monday
+                <div class="date-display" id="monday-date"></div>
+            </div>
+            <div class="grid-item header">
+                Tuesday
+                <div class="date-display" id="tuesday-date"></div>
+            </div>
+            <div class="grid-item header">
+                Wednesday
+                <div class="date-display" id="wednesday-date"></div>
+            </div>
+            <div class="grid-item header">
+                Thursday
+                <div class="date-display" id="thursday-date"></div>
+            </div>
+            <div class="grid-item header">
+                Friday
+                <div class="date-display" id="friday-date"></div>
+            </div>
+            <div class="grid-item header">
+                Saturday
+                <div class="date-display" id="saturday-date"></div>
+            </div>
 
             <!-- Task Areas -->
             <div class="grid-item" id="sunday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('sunday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
             <div class="grid-item" id="monday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('monday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
             <div class="grid-item" id="tuesday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('tuesday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
             <div class="grid-item" id="wednesday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('wednesday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
             <div class="grid-item" id="thursday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('thursday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
             <div class="grid-item" id="friday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('friday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
             <div class="grid-item" id="saturday">
-                <div class="task-list"></div>
+                <ul class="task-list"></ul>
                 <button class="control-btn" onclick="addTask('saturday')">Add Task</button>
                 <button class="control-btn" onclick="removeTask()">Remove Selected</button>
             </div>
